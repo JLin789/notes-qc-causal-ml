@@ -1,0 +1,124 @@
+\chapter{Economic Modeling Overview}
+
+\section{Typesetting Examples}
+\begin{theorem}[Demo]\label{th:demo} The following holds:
+    \begin{equation*}
+    a + b = c
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+QED
+\end{proof}
+
+Look at Theorem~\ref{th:demo}.
+
+\begin{example}[Demo]\label{ex:demo}
+    Stuff
+\end{example}
+Sample text below.
+
+\section{What is Economic Modeling?}
+The goal of an economic model is to take some real world phenomena and represent it in a way that we can analyze it rigorously and tractably. At the most fundamental level, a \vocab{model} is just a set of assumptions that we make. Models can take many forms and you are likely already familiar with some models of real world phenomena. For example, you might construct a model of dining preferences by assuming that the number of people who eat in the dining halls is greater on days where the food is good. Or you might have seen toy models of molecules where the atoms are represented by marshmallows and the bonds between them as toothpicks. With the COVID-19 pandemic, models of infectious disease were used to predict the future number of infectious by assuming how often people interacted with each other,  
+
+Economic models try to answer economic questions. Some of these questions might include:
+\begin{itemize}
+    \item How does the minimum wage affect the amount of labor hired?
+    \item What is the tax rate that maximizes revenue for the government?
+    \item How does the interest rate affect savings and investment?
+\end{itemize}
+Importantly, economic models usually focuses on \vocab{positive} economic questions, that is questions about how things in the world work. This is contrast to \vocab{normative} economics, which answers how things should be. However, that does not mean that economic models cannot tell us the optimal policy. While an economic model cannot answer what the `best' policy is in a vaccum, it can tell us what the best policy is once we have defined what `best' means. Normative economics examines what it means for a policy to be the `best,' while positive economics tells us how we get there.
+
+A model can take many forms, but in this class, we focus on mathematical models of economic behavior. That is, we try to represent the behavior of people, firms, and governments via mathematical functions and see what insights can be gained from such representation. The use of mathematics allows us to formalize our economic reasoning and make precise what conclusions must follow from certain assumptions. 
+
+\subsection*{What makes a good economic model?}
+As you will learn throughout this course, economic models can take many forms and there is almost no limit to the models that you can create. However, just because you can write down a certain model, does not mean that model is a good one. Most good economic models share a few key characteristics:
+\begin{itemize}
+    \item A model should make clear what assumptions are being included, how these assumptions affect the model's conclusions, and the potential limitations of these assumptions.
+    \item A model should be general enough to be a realistic representation of the real world but also simple enough to be easy to manipulate and interpret mathematically. Striking this balance will be a key theme of this course and will be important for doing well in each of the modeling projects.
+    \item The conclusions of a model should tie back to the problem being asked. Deriving a mathematical expression that quantifies a particular behavior or result is often the majority of the battle, but it is important to understand how these results answer our initial question and whether our interpretation makes sense intuitively.
+\end{itemize}
+
+\subsection*{The role of assumptions}
+You may have heard that economists make unrealistic assumptions in their models, and to a certain degree this is true. Most economists do not think that individuals or even firms are actually able to perfectly optimize their decisions. However, since the real world is too complex to model perfectly, assumptions play a few crucial roles: 
+\begin{description}
+    \item[Tractability] Perhaps the main role of assumptions is to make models tractable to solve analytically. It would be almost impossible to make concise models that generate useful predictions if we had to figure out how every person in the world makes decisions. Assumptions allow us to simplify the model so that they can actually be solved with current mathematical techniques.
+    \item[Illustrate possibility] Related to the tractability rationale for models, we may make assumptions to show that certain mechanics are at least possible under assumptions that are not too unreasonable. The assumptions allow us to simplify the problem so that the mechanisms are more clear, and helps us obtain a better understanding by removing some of the ``noise'' that might be present absent said assumptions. 
+    \item[Evaluate differences between models] By specifying assumptions explicitly, economists are able to understand where two models differ and why they might reach different results. In particular, it tells us when one model might be more applicable than another. For example, if we assume that individuals drive at the fastest possible speed, this might be an accurate assumption on an empty highway, while a model that says drivers try to minimize their risk of an accident would be more applicable to a crowded intersection.
+    \item[Specify points of failure] By specifying our assumptions, we also specify what must follow if you believe those assumptions to hold. Importantly, if we observe that the real world does not behave the way that our model predicts, it tells us exactly where we should look to see why the model is inaccurate.
+    \item[Close enough] While assumptions in economic models might seem very unrealistic on an individual level, they can often be close enough to the truth in aggregate that we can still derive useful and accurate predictions from said models. For example, while individual firms might not be perfectly optimal, it may be reasonable to say that on aggregate, they make decisions that are pretty close to optimal even if some firms deviate slightly. 
+\end{description}
+Assumptions can make your life a lot easier when trying to model some economic phenomena. However, you will want to be careful. In particular, assumptions should help you reach conclusions, but you should avoid assuming the conclusion itself. While it is in general better for models to approximate reality, you should not feel pressure to make your model too close to reality or else it loses much predictive power and clarity.
+
+Now that we have some understanding of how economists think about developing economic models, the rest of this chapter will build up a foundation of the different components of many models and introduce the mathematical tools relevant for analyzing them. Future chapters will apply and extend this foundation to various economic settings, which will help us characterize the way different pieces of the economy behave.
+
+\section{Optimization Problems}
+Almost all economic models boil down to one component: agents making decisions. The question that we try to answer is how agents make those decisions, and what are the consequences when many agents are making decisions at the same time. Some canonical examples of questions we can ask include the following:
+\begin{itemize}
+    \item How do workers decide how many hours to work?
+    \item How do households decide what goods they consume, and how much?
+    \item How do firms decide how much to produce? How do they decide how much labor to employ and capital to use?
+\end{itemize}
+
+In economics, it is usually assumed that the agents are trying to achieve the best possible outcome in some form. However, the term ``best'' can be unclear, so to formalize the concept, economists assume that agents are trying to maximize (or minimize) an \vocab{objective function}, which is a function $f: X \to \R$ from the set of possible choices $X$ to the real numbers $\R$. Examples of objective functions might include:
+\begin{itemize}
+    \item A firm choosing how many people to hire to maximize profits
+    \item A politician choosing which ads to buy to maximize votes
+    \item A shopper choosing what food to buy to maximize health
+\end{itemize}
+
+The inputs of the objective function, from the perspective of the agent, are the choices that the agent makes. We refer to these variables as \vocab{choice variables} -- the choices that the agent gets to make. An example of a choice variable might be how many workers to hire. Choice variables are a part of a broader class of variables called \vocab{endogenous variables}, which is any variable where the value of the variable is determined by the choices the agent makes. The difference between endogenous variables and choice variables is subtle. An example of an endogenous variable that might not be considered a choice variable would be the profits that a firm makes. While the firm might not directly choose the profits, the choices they make clearly affect the profits.
+
+Endogenous variables are in contrast to \vocab{exogenous variables}, which are variables that are determined outside of the model and are not affected by the agent's decisions. Some examples of exogenous variables might include:
+\begin{itemize}
+    \item The amount of land available
+    \item The tax rate
+    \item The productivity of workers
+\end{itemize}
+One important point is that exogenous variables are not exogenous in all models. A firm might interpret the government's tax rate as exogenous in one model, but if our agent is the government, then the tax rate would be endogenous. Throughout this book, we will refer to agents \textit{perceiving} certain quantities as exogenous, which means that the agents optimize by assuming that their actions do not affect said quantities, even if they might in the full model. 
+
+In this book, we distinguish endogenous and exogenous variables in a function's arguments by writing the endogenous variables to the left of a semicolon (;), and the exogenous variables to the right:
+\begin{align*}
+    f(x_1, x_2, \dots, x_n ; y_1, y_2, \dots, y_m)
+\end{align*}
+In the example above, $x_1, \dots, x_n$ would be the endogenous variables, while $y_1, \dots, y_n$ would be the exogenous variables. 
+
+In many cases, agents are not able to make any choice that they want to maximize their objective function. For example, an individual who goes shopping cannot buy unlimited goods, because they cannot spend more than their budgets. Such restrictions on the choices that an agent can make are called \vocab{constraints}. Constraints can either be equality or inequality constraints. Some examples include:
+\begin{itemize}
+    \item The amount of spending $s$ must be less than or equal to the budget $b$, $s \leq b$.
+    \item The farm must produce exactly $x$ bushels of corn $c$, $c = x$.
+    \item The number of hours spent working $h$ can be at most the number of hours in a day $24$, $h \leq 24$
+\end{itemize}
+For the most part in economics, we deal with inequality constraints because we are mostly considering how agents behave when resources are scarce. A problem with constraints is called a \vocab{constrained maximization} problem, and conversely, a problem without constraints is called an \vocab{unconstrained maxizmization} problem.
+
+Now that we have defined the vocabulary of optimization, we can proceed to setting up a general optimization problem. For the purposes of concision, we use vector notation. Let $\vec{x} = (x_1, \dots, x_n) \in X$ be the choice variables, and let $\vec{y} = (y_1, \dots, y_m) \in Y$ be exogenous variables. Let $f: X \times Y \to \R$ be the objective function.\footnote{As a review of notation, $X\times Y$ refers to the Cartesian product between sets $X$ and $Y$. That is, if $X = \{x_1, x_2\}$ and $Y = \{y_1, y_2, y_3\}$, then $X\times Y$ is the set of ordered pairs with the first element from $X$ and the second element from $Y$, so $X\times Y = \{(x_1, y_1), (x_1, y_2), (x_1, y_3), (x_2, y_1), (x_2, y_2), (x_2, y_3)\}.$ Do not worry if this notation (and other instances of mathematical notation) is new for you; it is much more important that you are able to grasp the meaning of the underlying concepts.} If we do not have constraints, then we can write the unconstrained maximization problem as
+\begin{align*}
+    \max_{\vec{x}} f(\vec{x}; \vec{y})
+\end{align*}
+The above is mathematical for ``maximize $f$ from choices of $\vec{x}$''. Now suppose we have constraints, $g_1(\vec{x}; \vec{y}) \leq c_1, \dots, g_k(\vec{x}; \vec{y}) \leq c_k$. Then we can write the maximization problem as,
+\begin{align*}
+    \max_{\vec{x}} f(\vec{x}, \vec{y}) \text{ s.t. } g_1(\vec{x}; \vec{y}) \leq c_1, \dots, g_k(\vec{x}; \vec{y}) \leq c_k
+\end{align*}
+The above is mathematical notation for ``maximize $f$ with choice of $\vec{x}$ subject to (s.t.) the constraints.'' 
+
+\subsection*{Optimized quantities as functions}
+Now that we have set up the problem, we can consider the choice of $\vec{x}$ that maximizes our objective function. We use the argument maximum to refer to this maximized quantity, and we normally denote the maximized quantity with an asterisk:
+\begin{align*}
+    \vec{x}^* = \argmax_{\vec{x}} f(\vec{x}; \vec{y})
+\end{align*}
+
+If we assume that the value of $\vec{x}^*$ is unique, then notice that $\vec{x}^*$ is a \emph{function} of the exogenous variables, $\vec{y}$. That is, once we have specified the objective function $f$, as well as the exogenous quantities, the value of $\vec{x}^*$ is entirely determined by $\vec{y}$. This means that we can ask questions like, if the value of $\vec{y}$ changes, how would our optimal choice, $\vec{x}^*$ change? For example, if you decide to buy apples in order to maximize your happiness, you might ask how does a change in the price of apples affect the amount of apples that you buy. This is known as a \vocab{comparative static}, how some optimal choice or equilibrium quantity changes in response to a change in an exogenous variable. Taking comparative statics is one of the central goals of economic modeling. Questions related to comparative statics might include:
+
+\begin{itemize}
+    \item If a firm chooses an optimal number of workers to maximize profits, how does this quantity depend on the minimum wage set by the government?
+    \item If households choose an amount to save to maximize their long-term utility, how does this amount depend on the economy's interest rate?
+    \item If a consumer chooses a quantity of goods to purchase based on their personal preferences and the goods' prices, how do consumption quantities depend on the sales tax rate? 
+\end{itemize}
+As we see in the examples above, modeling comparative statics is often useful for studying the effects of different policy interventions. At a high level, solving an agent's optimization problem describes how individual agents behave, while solving for comparative statics describes how environmental changes affect these behaviors.
+
+A common point of confusion among students is the distinction between $\vec{x}$, which is the name that we give to the choice variable, and $\vec{x}^*$, which is the value that optimizes the objective function. In principle, $\vec{x}$ can be any value. For example, let's say that $\vec{x} = (a, b)$, where $a$ is the number of apples you buy and $b$ is the number of bananas. You could in principle buy $a = 2$ apples and $b = 3$ bananas, even though you would be happier with $a = 4$ and $b = 4$. If we do not know your optimization function and how your choice of $a$ and $b$ depend on exogenous variables like prices, then we cannot study the comparative statics for $a$ or $b$.
+
+% Importantly, it would not make sense to take comparative statics with respect to $a$ or $b$. That is, it would not make sense to ask how the number of apples you buy will depend on price if you can freely choose how many apples to buy and have not defined a relationship with price. 
+
+However, if you say that you are going to buy the number of apples and bananas that makes you the most happy, then this is $\vec{x}^*$ and will depend on the price as well as many other outside factors. In this case, it makes sense to ask how the number of apples you buy depends on price. Optimization is a bit like telling a robot, ``go and make the choices that will make me most happy.'' Once you have done that, the choice is fully determined by the outside world, and so we say that the optimal choice, $\vec{x}^*$ is a function of the exogenous variables $\vec{y}$. Technically, we should write $\vec{x}^*(\vec{y})$, but often we will treat this as implicit and just write $\vec{x}^*$.
+
+A common mistake when solving optimization problems is to write $\vec{x}^*$ as a function of one or more of the choice variables. This is a category error. It essentially says that our optimal choice depends on our choices. However, you can say that the optimal choice of one quantity depends on the optimal choice of another quantity. That is, you might have that $x_1^*$ depends on $x_2^*$ in some way. However, because $x_2^*$ is a function of the exogenous variables, $\vec{y}$, then $x_1^*(x_2^*(\vec{y}))$ is also a function of only exogenous variables. 

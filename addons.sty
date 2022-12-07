@@ -1,0 +1,34 @@
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\providecommand{\R}{\mathbb{R}}
+\providecommand{\Lagr}{\mathcal{L}}
+% bold notation is so much better for vectors
+\renewcommand{\vec}[1]{\mathbf{#1}}
+% comment this out for publication
+% \providecommand{\TODO}[1]{\todo{#1}}
+% comment this out when working
+\providecommand{\TODO}[1]{}
+\providecommand{\partials}[2]{\frac{\partial #1}{\partial #2}}
+\providecommand{\vw}{\vec{w}}
+\providecommand{\vZ}{\vec{Z}}
+\providecommand{\bw}{\vec{w}}
+\providecommand{\bZ}{\vec{Z}}
+
+\usepackage{physics}
+
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{hyperref}
+\providecommand{\image}[2][1]{
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=#1\linewidth]{#2}
+    \end{figure}
+}
