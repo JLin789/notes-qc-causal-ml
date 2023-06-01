@@ -1,2 +1,2 @@
-# Notes Template
-Personal notes template for Jimmy Lin. Copied from Econ 1011a Textbook by Kevin Bi and Jimmy Lin. LaTeX template courtesy of Evan Chen.
+# notes-qc-causal-ml
+Notes from the QuantCo Academy on Causal ML, taught by Jann Spiess.
